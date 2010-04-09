@@ -1,0 +1,18 @@
+class LoginController < ApplicationController
+  def login
+if request.post? and params[:login]
+@login = Login.new(params[:login])
+login = Login.find_by_username(@login.username)
+if login and login.password_matches?(@login.password)
+Session[:login_id] = login.id
+login.last_login = login.id
+user.save
+if.login.admin?
+redirect_to :action => &quot;admin&quot;
+else
+redirect_to :action => &quot;index&quot
+end
+flash[:notice] = "No User Found with that username/password"
+end
+end
+end

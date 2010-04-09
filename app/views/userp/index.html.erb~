@@ -1,0 +1,18 @@
+<table>
+<% form_for :userp,@user,:url=>{:controller=>"home",:action=>"index"} do |f| %>
+<td> <%= error_messages_for :userp %></td>
+<tr>
+<td><b>Username: <%= f.text_field :username %></b><br/>
+<b>Password: <%= f.password_field :password  %></b><br/></td>
+</tr>
+<tr>
+<td><%= submit_tag "Go" %></td>
+</tr>
+</table>
+<% end %>
+<br>
+</br>
+<br>
+</br>
+Don't have an account ?
+<%= link_to 'Sign up' ,:controller=>"signups",:action=>"index",:id=>@signup %>

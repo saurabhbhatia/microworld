@@ -1,0 +1,11 @@
+class AddCurrentDateToLedger < ActiveRecord::Migration
+  def self.up
+    add_column :ledgers, :current_date, :date
+    add_column :ledgers, :previous_date, :date
+    
+  end
+
+  def self.down
+    remove_column :ledgers, :current_date
+  end
+end

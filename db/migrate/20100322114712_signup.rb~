@@ -1,0 +1,22 @@
+class Signup < ActiveRecord::Migration
+  def self.up
+create_table :signups do |t|
+t.column :username,                     :string
+t.column :password,                     :string, :limit => 40
+t.column :salt,                         :string, :limit => 40
+t.column :first_name, :string
+t.column :last_name, :string
+
+t.column :verify_password, :string
+t.column :dob, :date
+t.column :terms, :integer
+t.timestamp
+end
+end
+
+def self.down
+drop_table :signups
+end
+end
+
+

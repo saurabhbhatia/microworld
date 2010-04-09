@@ -1,0 +1,73 @@
+<table>
+<h3>Sign Up: </h3>
+<td><%= content_tag "div", "Thank you for registering for our newsletter",
+:class => "success" unless @signup.new_record? %>
+<%= error_messages_for :signup %></td>
+<td><% form_for :signup, @signup do |f| %></td>
+
+<tr>
+<td>
+<b><u><%= f.label :'First Name' %></b></u><br />
+    <%= f.text_field :first_name %>
+</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>
+<b><u><%= f.label :'Last Name' %></b></u><br />
+    <%= f.text_field :last_name %>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<b><u><%= f.label :'User Name' %></b></u><br />
+    <%= f.text_field :username %>
+<br />
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<b><u><%= f.label :'Password' %></b></u><br />
+    <%= f.text_field :password %>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<b><u><%= f.label :'Re-Enter Password' %></b></u><br />
+    <%= f.text_field :verify_password %></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<b><u><%= f.label :'Date of Birth' %></b></u><br />
+<%= f.date_select :dob, :order => [:day, :month, :year],
+:start_year => (Time.now - 18.years).year,
+:end_year => 1930 %>
+<br /></p></td></tr>
+
+<tr>
+<td>
+<b>
+<%= f.check_box :terms %><br clear="right">
+I Accept the Terms & Conditions:
+</b>
+</td>
+</tr>
+<tr>
+<td>
+<%= submit_tag "Signup", :style => "margin-left: 26ex;" %>
+<% end %>
+<p>
+</p>
+
+</table>
+

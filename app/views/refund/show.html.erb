@@ -1,0 +1,21 @@
+<h2 align="right"><%= Time.now %></h2>
+<h1><u>Refund Detail </h1></u>
+<p>
+<table><br/>
+<td><th><u> Name </u></th></td>
+<td><th><u> Amount </u></th></td>
+<td><th><u>Feeder</u></th></td>
+<td><th><u>Date</u></th></td>  
+<td><th><u>Reason For Refund</u></th></td>
+<tr>
+<% for @refund in @refunds %>
+<th><td><%= @refund.name %></th></td>
+<th><td><%= @refund.amount %></th></td>
+<th><td><%= @refund.user_name %></th></td>
+<th><td><%= @refund.created_at %></th></td>
+<th><td><%= @refund.reason %></th></td>
+</tr>
+<% end %>
+</table> 
+  
+

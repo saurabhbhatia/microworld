@@ -1,0 +1,11 @@
+class Refunds < ActiveRecord::Migration
+  def self.up
+create table :refunds do |t|
+t.integer :user_id
+t.integer :refund_amount
+  end
+end
+  def self.down
+drop table :refunds
+  end
+end

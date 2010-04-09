@@ -1,0 +1,202 @@
+<h1>DailyLedgers :</h1>
+<table>
+<tr><% @users.each do |user| %></tr>
+<tr><td><%= user.text_field :amount, :size => 03 %></td></tr>
+    <tr><td><%= user.hidden_field :user_id, :value=> user.id %></td></tr>
+<h3> <td> <%= link_to user.username, :controller=> "ledger", :action=> "new", :id => @ledger %> </h3></td>
+<td><%= calendar_date_select_tag 'ledger', :current_date  %></td>
+    <td><%= calendar_date_select_tag  'ledger', :previous_date %></td>   
+<% end %>
+	<% form_for :ledger do|f| %>    
+    <td><%= f.submit 'Save_amount' %></td>
+
+<% end %>
+</table>
+<%= link_to 'back' , :controller=>"ledger",:action=>"index",:id=>@ledger %></p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Daily Ledgers:</h1>
+<br>
+</br>
+<table>
+<tr>
+        <% form_for :user do|u| %>
+        <td><% @users.each do |user| %></td></tr>
+        <td><h2><%=  link_to user.username, :controller=> "ledger", :action=> "new", :id => @ledger %> </h3></td>
+        <td><%= u.hidden_field :user_id,:value=> u.id %></td>		
+        <td><%= u.label :Amount %></td>
+        <td><%= u.text_field :Amount, :size => 03 %></td>
+        <td><%= u.label :Date %></td>
+        <td><%= calendar_date_select_tag "ledger",:current_date  %></td>
+	<td><%= calendar_date_select_tag "ledger",:previous_date  %></td>
+<% end %> 
+<% end %>
+<tr>    
+	<% form_for :ledger,:url=>{:action => "new" } do|f| %>
+	
+	
+        <td><%= f.submit 'save' %></td>
+ </tr>
+ <% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 align="right"><%= Time.now %></h2>
+<h1><u>Daily Ledgers:</h1></u>
+<br>
+</br>
+<table>
+<tr>
+       
+	<td><% @users.each do |user| %></td>
+<td><h2><%= link_to user.username, :controller=> "users", :action=> "show", :id => user.id %> </h3></td>
+	<% end %>  
+ 	<% form_for :ledger, :controler =>:ledger, :action=>"show", :id=>@ledger do|f| %>
+        <%= f.hidden_field :user_id,:value=> f.id %>	   
+	<%= f.label :Amount %>
+ 	<%= f.text_field :amount, :size => 03 %>
+        <%= f.label :Date %>
+        <%= calendar_date_select_tag "ledger", :current_date  %>
+        <%= f.submit 'save' %>
+ </tr>
+<br>
+</br>
+
+<% end %>
+</table>
+<br>
+</br>
+<u><%= link_to '<< Previous Date', :controller=> "ledger", :action=>"show",:id=>@ledger %></u>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u><%= link_to 'Next Date >>', :controller=> "ledger", :action=>"show",:id=>@ledger %></u>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 align="right"><%= Time.now %></h2>
+<h1><u>Daily Ledgers:</h1></u>
+<br>
+</br>
+<table>
+<tr>.
+        <% form_for :ledger, :controler =>:ledger, :action=>"show", :id=>@ledger do|f| %>
+        <td><%= f.hidden_field :user_id,:value=> f.id %></td>
+	<td><%= f.label :Amount %></td>
+ 	<td><%= f.text_field :amount, :size => 03 %></td>
+        <td><%= f.label :Date %></td>
+        <td><%= calendar_date_select_tag "ledger", :current_date  %></td>
+        <td><%= calendar_date_select_tag  "ledger", :previous_date %></td>  	
+        <td><%= f.submit 'save' %></td>
+
+<br>
+</br>
+</tr>
+<% end %>
+<table>
+<tr>
+<% form_for :user do|u| %>
+<td><% @users.each do |u| %></td></tr>
+<tr><td><h2><%= link_to u.username, :controller=> "users", :action=> "show", :id => u.id %> </h3></td></tr>
+<% end %>
+<% end %>
+</table>
+<br>
+</br>
+<u><%= link_to '<< Previous Date', :controller=> "ledger", :action=>"show",:id=>@ledger %></u>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u><%= link_to 'Next Date >>', :controller=> "ledger", :action=>"show",:id=>@ledger %></u>
+
+
+
+
+
+
+
+
+
+
+<table><br/>
+<td><th><u> ID </u></th></td>
+<td><th><u> Name </u></th></td>
+<td><th><u> Amount </u></th></td>
+<td><th><u>Feeder Username</u></th></td>
+<td><th><u>Date </u></th></td>
+  
+<tr>
+<% for @ledger in @ledgers %>
+<th><td><%= @ledger.id %></th></td>
+<th><td><%= @ledger.name %></th></td>
+<th><td><%= @ledger.amount %></th></td>
+<th><td><%= @ledger.user_name %></th></td>
+<th><td><%= @ledger.date_ledger %></th></td>
+</tr>
+<% end %>
+</table>
+<table>
+ 
+
+
+
+
+  <td><% form_for :group,:url=>{:action => "show_ledger" } do|f| %></td>
+<label ="ledger">Go To Date</label><br/>
+  <td><%= f.select ("date_ledger",@ledgers.map {|u| [u.date_ledger,u.date_ledger]}, :prompt =>"Select date") %></td>
+<td><%= submit_tag "Show Ledger" %><br/></td>
+<% end %>
+</table>
+
+

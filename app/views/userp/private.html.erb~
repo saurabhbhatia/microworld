@@ -1,0 +1,6 @@
+<!--#displays hello (username)-->
+hello <strong><%=session[:user_id]%></strong>.
+
+<!--#creates logout link, when the link is clicked, the controller is User and the method executed will be logout.-->
+<%= link_to "logout",:controller => "userp", :action => "logout" %>
+

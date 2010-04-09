@@ -1,0 +1,4 @@
+<h3><b>Total Amount:</b>
+<% @ledgers.each do |user| %>
+<u><%=h @ledger.amount %></u>
+<% end %>

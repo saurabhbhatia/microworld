@@ -1,0 +1,8 @@
+<h1>Account Detail </h1>
+<p>
+ <p>
+  <b>Username:</b>
+  <%=h @userp.username %>
+</p>
+
+

@@ -1,0 +1,75 @@
+<html>
+<table>
+<tr>
+<% form_for :ledger do |f| %>
+<%= image_tag url_for_file_column('user','image') %>
+  <h1><tr><td><%= l.label : 'Name Of The Person' %></td></h1></tr>
+	<td><%= l.text_field :username, :size => 03 %></td> </tr>  
+  
+</p>
+
+<p>
+  <h1><tr><td><%= l.label : 'Birth Date' %></td></h1></tr>
+  <td><%= l.text_field :birth_date, :size => 05 %></td> </tr>  
+</p>
+
+<p>
+<h1><tr><td><%= l.label : 'Marrital Status' %></td></h1></tr>
+<select name="user[idno]">
+    <option value="1">Select Status</option>
+    <option value="2">Married</option>
+    <option value="3">UnMarried</option>
+  </select>
+   
+</p>
+<p>
+</p>
+<h1><tr><td><%= l.label : 'Occupation' %></td></h1></tr>
+  <td><%= l.text_field :occupation, :size => 05 %></td> </tr> 
+<p>
+  <h1><tr><td><%= l.label : 'Monthly Income' %></td></h1></tr>
+  <td><%= l.text_field :income, :size => 05 %></td> </tr> </p>
+
+<p>
+<h1><tr><td><%= l.label : 'NO Of Children' %></td></h1></tr>
+   <select name="user[idno]">
+    <option value="1">No Of Children</option>
+    <option value="2">none</option>
+    <option value="3">1</option>
+    <option value="4">2</option>
+    <option value="5">3</option>
+    <option value="6">4</option>
+    <option value="7">5</option>
+    <option value="8">6</option>
+    <option value="9">7</option>
+    <option value="10">8</option>
+    <option value="11">9</option>
+    <option value="12">10</option>
+  </select>
+
+
+
+</p>
+<p>
+<h1><tr><td><%= l.label : 'NO Of Children Going To school' %></td></h1></tr>
+  <select name="user[idno]">
+    <option value="1">NO Of Children Going To School</option>
+    <<option value="2">none</option>
+    <option value="3">1</option>
+    <option value="4">2</option>
+    <option value="5">3</option>
+    <option value="6">4</option>
+    <option value="7">5</option>
+    <option value="8">6</option>
+    <option value="9">7</option>
+    <option value="10">8</option>
+    <option value="11">9</option>
+    <option value="12">10</option>
+  </select>
+<p>
+<h1><tr><td><%= l.label : 'Future Vision' %></td></h1></tr>
+<td><%= l.text_field :future_vision, :size => 05 %></td> </tr> 
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

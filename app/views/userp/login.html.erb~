@@ -1,0 +1,17 @@
+<table>
+<tr>
+<% if flash[:notice] %>
+<% end %>
+<td><%= form_tag :action=>'authenticate' %></td>
+<tr><td><u><b>User name:</b></u></td></tr>
+<tr><td>
+<%= text_field("userp", "username",:size=>"20" ) %>
+</td></tr>
+<tr><td><u><b>Password:</b></u></td></tr>
+<tr><td>
+<%= password_field("userp", "password",:size=>"20" )%></td></tr>
+<tr><td><%= submit_tag 'LOGIN' %></td></tr>
+</table>
+<br/>
+<br/>
+Dont have an Account ?<%= link_to "Sign up",:controller=>"userp",:action=>"new",:id=>@userp %>

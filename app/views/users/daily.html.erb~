@@ -1,0 +1,9 @@
+<h1>Daily Ledger</h1>
+<% form_for (@user)do |f| %>
+
+
+
+
+
+
+<% link_to 'back',users_path %>

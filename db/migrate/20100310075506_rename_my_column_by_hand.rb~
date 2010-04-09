@@ -1,0 +1,9 @@
+class RenameMyColumnByHand < ActiveRecord::Migration
+  def self.up
+rename_column :ledgers, :user_id, :uid
+  end
+
+  def self.down
+	drop_table :ledgers
+  end
+end

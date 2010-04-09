@@ -1,0 +1,4 @@
+class LedgersUsers < ActiveRecord::Base
+belongs_to :users
+belongs_to :ledgers
+end

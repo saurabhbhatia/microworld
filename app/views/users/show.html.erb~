@@ -1,0 +1,75 @@
+
+<table>
+<tr>
+<td>
+<p>
+<h3><b>Total Amount:</b>
+<u><%=h @user.totalamount%></u>
+</p></h3><p>
+
+<%= image_tag url_for_file_column('user','image') %></h2>
+
+</p></td></tr><tr>
+<td><p>
+   <b>Belongs To Group:</b>
+   <u><%=h @user.group.group_name %></u>
+</p></td></tr><tr>
+
+<td><p>
+  <b>Member name:</b>
+  <%=h @user.user_name %>
+</p></td></tr><tr>
+<td><p>
+    <b>Bitrh Date:</b>
+  <%=h @user.birth_date %>
+</td></tr><tr>
+</p>
+<td><p>
+<b>Birth Place:</b>
+  <%=h @user.birth_place %>
+</p></td></tr></tr>
+<td><p>
+  <b>Age:</b>
+  <%=h @user.age %>
+</p></td></tr><tr>
+<td>
+<p>
+  <b>Address:</b>
+  <%=h @user.address %>
+</p></td></tr><tr>
+<td><p>
+  <b>Status:</b>
+  <%=h @user.status %>
+</p></td></tr><tr>
+<td><p>
+  <b>Monthly Income:</b>
+  <%=h @user.income %>
+</p></td></tr><tr>
+<td>
+<p>
+  <b>No Of Children:</b>
+  <%=h @user.no_of_children %>
+</p></td></tr><tr>
+<td><p>
+  <b>No Of Children Going To School:</b>
+  <%=h @user.children_school %>
+</p></td></tr><tr>
+<td><p>
+  <b>Reason for saving:</b>
+  <%=h @user.reason_for_saving %>
+</p></td></tr><tr>
+<td><p>
+  <b>About User:</b>
+  <%=h @user.history %>
+</p></td></tr><tr>
+<td><p>
+  <b>Future Vision:</b>
+  <%=h @user.future_vision %>
+</p></td></tr><tr>
+</tr>
+</table>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+
+

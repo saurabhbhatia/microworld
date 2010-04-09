@@ -1,0 +1,16 @@
+<% @users.each do |user| %>
+<table>
+<tr>
+	<% form_for :ledger,@ledger, :url => { :action => "index" } do |f| %>
+	<%= f.error_masseges %>
+	<h1><td><%= link_to user.username  %></h1></td>
+	<td><%= f.text_field :Amount, :size => 03 %></td>
+	<td><%= f.submit 'save' %></td>
+	<td>Date:</td>     	
+	<td><%= calendar_date_select_tag :ledger, :current_date  %></td>
+	<td><%= calendar_date_select_tag  :ledger, :previous_date %></td>  	
+	<%= f.hidden_field :user_id,:value=> user.id %></td>
+</tr>
+<% end %>
+<% end %>
+</table>

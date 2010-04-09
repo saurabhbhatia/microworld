@@ -1,0 +1,10 @@
+<table>
+<tr>
+<th><td> Member Name </th></td>
+<th><td> Amount </th></td>
+<th><td> Date </th></td>
+
+<% for @user in @users %>
+<%= @user.username %>
+<% end %>
+

@@ -1,0 +1,23 @@
+
+<tr>
+<td><h4><b><u>Todays Date : <%= Date.today %></u></b></h4></td>
+<h3>Welcome to Bachat Khata </h3>
+<table>
+<h4><u>ADD Amount:</u></h4></br>
+  <td><% form_for :group,:url=>{:action => "show_user" } do|f| %></td>
+  <td><%= f.select ("group_id",@groups.map {|u| [u.group_name,u.id]}, :prompt =>"Select Group") %></td>
+  <td><%= f.submit 'show group members' %> </td>
+</tr>
+<% end %>
+</table>
+<br/>
+<br/>
+<h3><u><%= link_to 'ledger Details',:controller=>"ledger",:action=>"show_ledger",:id=>@ledger %></h3></u>
+<table>
+<td><% form_for :group,:url=>{:action => "show_ledger" } do|f| %></td>
+<label ="ledger">Go To Date</label><br/>
+<td><%= f.select ("id",@ledgers.map {|u| [u.date_ledger,u.id]}, :prompt =>"Select date") %></td>
+<td><%= submit_tag "Show Ledger" %><br/></td>
+<% end %>
+</table>
+

@@ -1,0 +1,106 @@
+<table>
+<tr>
+<h1>New Member</h1>
+<% form_for (@user), :html => {:multipart => true } do |f| %>
+  <%= f.error_messages %>
+<tr><td>
+	<%= select ("user", "group_id", Group.all.collect{|u| [u.group_name, u.id]}, :prompt =>"Select Group") %>
+        </td> </tr>  
+  
+ <tr> <td>
+    <b><u><%= f.label :'Member name' %></b></u><br />
+    <%= f.text_field :user_name %>
+  </td></tr>
+  <tr><td>
+    <b><u><%= f.label :Birthdate %></b></u><br />
+    <%= f.text_field :birth_date %>
+</td></tr>
+<tr><td>
+    <b><u><%= f.label :birthplace %></b></u><br />
+    <%= f.text_field :birth_place %>
+  </td></tr>
+<tr><td>
+    <b><u><%= f.label :age %></b></u><br />
+    <%= f.text_field :age %>
+  </td></tr>
+  <tr><td>
+    <b><u><%= f.label :address %></b></u><br />
+    <%= f.text_area :address ,:rows=> 3 %>
+  </td></tr>
+<tr><td>
+<b><u><%= f.label :Status %></b></u><br />
+    <select name="user[status]">
+    <option value="1">Select Status</option>
+    <option value="2">Married</option>
+    <option value="3">UnMarried</option>
+      </select>
+  </td></tr>
+<tr><td>
+    <b><u><%= f.label :'Occupation' %></b></u><br />
+    <select name="user[occupation]">
+    <option value="1">Select Occupation</option>
+    <option value="2">Service</option>
+    <option value="3">Business</option>
+
+      </select>
+  </td></tr>
+ <tr><td>
+    <b><u><%= f.label :'Monthly Income' %></b></u><br />
+    <%= f.text_area :income ,:rows=> 01 %>
+  </td></tr>
+  <tr><td>
+<select name="user[no_of_children]">
+    <option value="">No Of Children</option>
+    <option value="none">none</option>
+    <option value="2">1</option>
+    <option value="3">2</option>
+    <option value="4">3</option>
+    <option value="5">4</option>
+    <option value="6">5</option>
+    <option value="7">6</option>
+    <option value="8">7</option>
+    <option value="9">8</option>
+    <option value="10">9</option>
+    <option value="11">10</option>
+  </select>
+</td></tr>
+<tr><td>
+<select name="user[children_school]">
+    <option value="">No Of Children Going To School</option>
+    <option value="1">none</option>
+    <option value="2">1</option>
+    <option value="3">2</option>
+    <option value="4">3</option>
+    <option value="5">4</option>
+    <option value="6">5</option>
+    <option value="7">6</option>
+    <option value="8">7</option>
+    <option value="9">8</option>
+    <option value="10">9</option>
+    <option value="11">10</option>
+  </select>
+</td></tr>
+<tr><td>
+    <b><u><%= f.label :reason_for_saving %></b></u><br />
+    <%= f.text_area :reason_for_saving ,:rows=> 3 %>
+  </td></tr>
+<tr><td>
+    <b><u><%= f.label :'About' %></b></u><br />
+    <%= f.text_area :history %>
+  </td></tr>
+  <tr><td>
+    <b><u><%= f.label :'Future Vision' %></b></u><br />
+    <%= f.text_area :future_vision %>
+  </td></tr>
+ <tr> <td>
+    <b><u>Image URL:</u></b><br/><%= file_column_field "user", "image" %>		
+
+  </td></tr>
+ <tr><td>
+    <%= f.submit 'Save' %>
+
+  </td></tr>
+
+<% end %>
+</table>
+<%= link_to 'Back', users_path %>

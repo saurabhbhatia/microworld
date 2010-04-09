@@ -1,0 +1,32 @@
+<h1>Create New Account</h1>
+<td><% form_for :userp,:controller=>"userp",:action=>"create",:id=>@userp do|f| %></td>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :'Enter First Name' %><br />
+    <%= f.text_field :first_name , :size=>20 %>
+  </p>
+  <p>
+
+    <%= f.label :'Enter Last Name' %><br />
+    <%= f.text_field :last_name , :size=>20 %>
+  </p>
+
+  <p>
+    <%= f.label :'Enter Username' %><br />
+    <%= f.text_field :username , :size=>20 %>
+  </p>
+  <p>
+    <%= f.label :'Enter Password' %><br />
+    <%= f.password_field:password , :size=>20 %>
+  </p>
+   <p>
+
+    <%= f.label :'Re-Enter Password' %><br />
+    <%= f.password_field :verify_password , :size=>20 %>
+  </p>
+
+      <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+

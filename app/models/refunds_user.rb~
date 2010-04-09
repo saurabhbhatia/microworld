@@ -1,0 +1,2 @@
+class RefundsUser < ActiveRecord::Base
+end

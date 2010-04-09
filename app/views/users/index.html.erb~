@@ -1,0 +1,29 @@
+
+<u><h1>Listing Members</u></h1>
+</p>
+</p>
+<table>
+
+<% end %>
+  <tr>
+    <td><th><u>IdNo</u></th></td>
+    <td><th><u>Member Name</u></th></td>
+    <td><th><u>Total Amount</u></th></td>
+    <td><th><u>Group</u></th></td>    
+        </tr>
+<% @users.each do |u| %>
+  <tr>
+    <th><td><%= h u.id %></td></th>
+    <th><td><%= h u.user_name %></td></th>
+    <th><td><%= h u.totalamount %></td></th>
+    <th><td><%= h u.group.group_name %></td></th><p></p>
+    <th><td><b><u><%= link_to 'Show', u %></u></b></td></th>
+    <th><td><b><u><%= link_to 'Edit', edit_user_path(u) %></b></u></td></th>
+    <th><td><b><u><%= link_to 'Destroy', u, :confirm => 'Are you sure?', :method => :delete %></b></u></td></th>    
+<% end %>
+</table>
+<p>
+<p>
+<u><%= link_to 'Add New Member ', new_user_path %></u>
+</p>
+</p>

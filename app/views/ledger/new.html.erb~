@@ -1,0 +1,13 @@
+<h3 align="right"><%= Time.now %></h3>
+<h4><u>DailyLedgers:</u></h4></br>
+<table>
+<tr>
+
+  <td><% form_for :group,:url=>{:action => "show_user" } do|f| %></td>
+  <td><%= f.select ("group_id",@groups.map {|u| [u.group_name,u.id]}, :prompt =>"Select Group") %></td>
+  <td><%= f.submit 'show group members' %> </td>
+</tr>
+<% end %>
+</table>
+<br/>
+<br/>

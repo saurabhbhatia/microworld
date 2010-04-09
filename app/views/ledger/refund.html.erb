@@ -1,0 +1,17 @@
+<h2 align="right"><%= Time.now %></h2>
+<h1><u>Listing Users</h1></u>
+<br></br><table>
+<td><%form_tag ( {:controller=>"ledger",:action=>"update", :group_id => @group} ,{:method => :post}) do %></td>
+<tr><% for @user in @users %></tr>
+<td><strong><%= @user.user_name %></td></strong>
+<td><%= hidden_field "#{@user.id}", "user_id", :value => "#{@user.id}" %></td>  
+<td>Amount:<%= text_field "#{@user.id}", "amount" %></td></tr>
+
+</br>
+<% end %>
+</br>
+<tr><td><%= submit_tag "Save"  %></td></tr>
+<%end %>
+</table> 
+
+

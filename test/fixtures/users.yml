@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idno: 1
+  username: MyString
+  age: 1
+  address: MyText
+  reson_for_saving: MyText
+  birthplace: MyString
+  uploadimage: MyString
+
+two:
+  idno: 1
+  username: MyString
+  age: 1
+  address: MyText
+  reson_for_saving: MyText
+  birthplace: MyString
+  uploadimage: MyString

@@ -1,0 +1,17 @@
+<table>
+<h1>DailyLedgers :</h1>
+<p><tr>			
+	<td><% form_for :ledger,@ledger do |f| %></td>
+	<h1><tr><td><%= f.label :insert_Amount %></td><br /></h1>
+	<tr><td><%= f.text_field :Amount, :size => 03 %></td></tr>
+	<td><%= f.hidden_field :user_id,:value=> f.idno %></td>
+	</tr><tr>	
+	<tr><td><%= calendar_date_select_tag 'ledger', :current_date  %></td></tr>
+	<td><%= calendar_date_select_tag  'ledger', :previous_date %></td>  	
+	<tr><td><%= f.submit 'save' %></td></tr>
+</tr>
+</table>
+<% end %>
+<%= link_to "Back", :controller=>"ledger", :action=>"show", :id=>@user %>
+
+

@@ -1,0 +1,18 @@
+<h2> Ledger Details </td>
+<table>
+<tr>
+<td><th>ID</strong></th></td>
+<td><th>Name</strong></th></td>
+<td><th>Amount</strong></th></td>
+<td><th>Date</strong></th></td>
+</tr>
+<% for @ledger in @ledgers %>
+<tr>
+<td><%=h @ledger.id %></td>
+<td><%=h @ledger.name %></td>
+<td><%=h @ledger.amount %></td>
+<td><%=h @ledger.date_ledger %></td>
+</tr>
+
+</table> 
+<% end %>

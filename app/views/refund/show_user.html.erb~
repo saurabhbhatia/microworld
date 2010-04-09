@@ -1,0 +1,21 @@
+<h1><u>Listing Users</h1></u>
+<h4><align="center"><%= Time.now %></h4>
+<td><h4><b><u>Todays Date : <%= Date.today %></u></b></h4>
+<br></br><table>
+<td><%form_tag ({:controller=>"refund",:action=>"create",:group_id => @group},{:method => :post}) do |f| %></td>
+List of Members Belonging to the group: <strong><u><%= @group.group_name %></strong></u>
+<tr><% for @user in @users %>
+<td><strong><%= @user.user_name %></strong>
+<td><%= hidden_field "#{@user.id}", :user_id, :value => "#{@user.id}" %></td>  
+<td><%= hidden_field "#{@user.id}", :name, :value => "#{@user.user_name}" %></td>  
+<td>Amount:<%= text_field "#{@user.id}",:amount %></td>
+<td>Reason For Refund:<%= text_field "#{@user.id}",:amount %></td>
+<td>Feeder:<%= text_field "#{@user.id}",:user_name,:value=>session[:user_id] %><td>
+</tr>  	
+</br>
+<% end %>
+</br>
+<tr><td><%= submit_tag "ADD"  %></td></tr>
+<%end %>
+</table> 
+

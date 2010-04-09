@@ -1,0 +1,22 @@
+<h2>Welcome To Bachat Khata </h2>
+<h3><%= link_to 'Add Amount', :controller=>"ledger",:action=>"index",:id=>@ledger %></h3>
+<h3><%= link_to 'REFUND AMOUNT', :controller=>"refund",:action=>"index",:id=>@refund %></h3>
+</br>
+
+<h3 align="right"><%= Time.now %></h3>
+<h4><u>DailyLedgers:</u></h4></br>
+<table>
+<tr>
+
+</br>
+  <td><% form_for :group,:url=>{:action => "show_user" } do|f| %></td>
+  <td><%= f.select ("group_id",@groups.map {|u| [u.group_name,u.id]}, :prompt =>"Select Group") %></td>
+  <td><%= f.submit 'show group members' %> </td>
+</tr>
+<% end %>
+</table>
+<br/>
+<br/>
+
+</br>
+

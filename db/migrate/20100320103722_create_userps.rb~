@@ -1,0 +1,18 @@
+class CreateUserps < ActiveRecord::Migration
+  def self.up
+    create_table :userps do |t|
+
+        t.column :username,                     :string
+        t.column :password,                     :string, :limit => 40
+        t.column :salt,                         :string, :limit => 40
+	t.string :first_name
+	t.string :last_name
+	
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :userps
+  end
+end
