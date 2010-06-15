@@ -13,7 +13,6 @@ ActiveRecord::Schema.define(:version => 20100408112536) do
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
-    t.string   "message"
     t.integer  "size"
     t.integer  "total"
     t.datetime "created_at"
@@ -28,8 +27,14 @@ ActiveRecord::Schema.define(:version => 20100408112536) do
   end
 
   create_table "ledgers", :force => true do |t|
-    t.integer "amount"
-    t.integer "uid"
+    t.string   "name"
+    t.string   "user_id"
+    t.integer  "amount"
+    t.string   "user_name"
+    t.integer  "group_id"
+    t.date     "date_ledger"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ledgers_users", :force => true do |t|
@@ -69,18 +74,24 @@ ActiveRecord::Schema.define(:version => 20100408112536) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "idno"
-    t.string   "username"
+    t.string   "user_name"
+    t.date     "birth_date"
+    t.string   "birth_place"
     t.integer  "age"
     t.text     "address"
+    t.string   "status"
+    t.string   "occupation"
+    t.integer  "income"
+    t.integer  "no_of_children"
+    t.integer  "children_school"
+    t.binary   "image",             :limit => 16777215
+    t.integer  "group_id"
+    t.integer  "totalamount",                           :default => 0
+    t.text     "history"
+    t.text     "future_vision"
     t.text     "reason_for_saving"
-    t.string   "birthplace"
-    t.string   "image"
-    t.string   "groups"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_id"
-    t.integer  "amount_total"
   end
 
 end
