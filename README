@@ -1,1 +1,9 @@
 Bachat Khata
+
+Branches 
+  Master
+  Development
+  gh-pages
+ 
+Development needs to be done on the development branch.After all tests 
+are passed, it needs to be merged with the Master
