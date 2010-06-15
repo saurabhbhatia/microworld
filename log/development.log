@@ -6851,3 +6851,87 @@ Rendering template within layouts/application
 Rendering ledger/show
   [4;36;1mLedger Columns (25.8ms)[0m   [0;1mSHOW FIELDS FROM `ledgers`[0m
 Completed in 175ms (View: 33, DB: 27) | 200 OK [http://localhost/ledger/show_ledger]
+  [4;36;1mSQL (23.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (53.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (25.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100219121511)
+Migrating to CreateGroups (20100219122418)
+Migrating to CreateLedgers (20100222070225)
+Migrating to CreateLedgersUsers (20100320051123)
+Migrating to Userps (20100327075638)
+Migrating to CreateRefunds (20100329112628)
+Migrating to CreateRefundsUsers (20100329123741)
+Migrating to CreateGroupsLedgers (20100408112536)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `groups`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `groups`[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `groups_ledgers`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `groups_ledgers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `groups_ledgers`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `ledgers`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `ledgers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `ledgers`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `ledgers_users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `ledgers_users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `ledgers_users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `refunds`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `refunds`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `refunds`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `refunds_users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `refunds_users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `refunds_users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `userps`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `userps`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `userps`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserpController#login (for 127.0.0.1 at 2010-06-15 10:21:17) [GET]
+Rendering template within layouts/application
+Rendering userp/login
+Completed in 105ms (View: 103, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-15 10:21:35) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+NoMethodError (undefined method `file_column' for #<Class:0xb6d829b0>):
+  app/models/user.rb:7
+  app/controllers/users_controller.rb:37:in `new'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserpController#login (for 127.0.0.1 at 2010-06-15 10:21:40) [GET]
+Rendering template within layouts/application
+Rendering userp/login
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-15 10:21:46) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+NoMethodError (undefined method `file_column' for #<Class:0xb6e36050>):
+  app/models/user.rb:7
+  app/controllers/users_controller.rb:37:in `new'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
