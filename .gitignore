@@ -1,0 +1,10 @@
+# ignore all the log files while commiting
+log/*.log
+#ignore the local db config
+database.yml
+#ignore db files
+db/*.sqlite3
+#if you are using emacs - this is for ignoring emacs backups and file locks
+.#*
+#this is for other editors
+*~
