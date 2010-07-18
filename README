@@ -7,3 +7,4 @@ Branches
  
 Development needs to be done on the development branch.After all tests 
 are passed, it needs to be merged with the Master
+Please Develop on the development branch and we will later merge it with the master

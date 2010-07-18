@@ -6,8 +6,9 @@
 <u><%=h @user.totalamount%></u>
 </p></h3><p>
 
-<%= image_tag url_for_file_column('user','image') %></h2>
-
+<% if url_for_file_column('user','image') != nil %>
+   <%= image_tag url_for_file_column('user','image') %></h2>
+<% end %>
 </p></td></tr><tr>
 <td><p>
    <b>Belongs To Group:</b>
