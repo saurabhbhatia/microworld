@@ -1,18 +1,21 @@
-<h2> Ledger Details </td>
+<h2> Ledger Details </h2>
+<table><br/>
+<td><th>ID</th></td>
+<td><th>Name</th></td>
+<td><th>Amount </th></td>
+<td><th>Feeder Username</th></td>
+<td><th>Date</th></td>
 
 <tr>
-<td><th>ID</strong></th></td>
-<td><th>Name</strong></th></td>
-<td><th>Amount</strong></th></td>
-<td><th>Date</strong></th></td>
+<% for ledger in @ledgers %>
+<th><td><%= ledger.id %></th></td>
+<th><td><%= ledger.name %></th></td>
+<th><td><%= ledger.amount %></th></td>
+<th><td><%= ledger.user_name %></th></td>
+<th><td><%= ledger.date_ledger %></th></td>
 </tr>
-<% for @ledger in @ledgers %>
-<tr>
-<td><%=h @ledger.id %></td>
-<td><%=h @ledger.name %></td>
-<td><%=h @ledger.amount %></td>
-<td><%=h @ledger.date_ledger %></td>
-</tr>
-
-
 <% end %>
+
+
+</table>
+
