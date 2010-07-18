@@ -8,3 +8,6 @@ db/*.sqlite3
 .#*
 #this is for other editors
 *~
+config/environment.rb
+db/schema.rb
+*.jpg
