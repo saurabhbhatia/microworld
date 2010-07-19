@@ -1,4 +1,7 @@
 # Be sure to restart your server when you modify this file
+# force Rails into production mode when                          
+# you don't control web/app server and can't set it the proper way                  
+ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
