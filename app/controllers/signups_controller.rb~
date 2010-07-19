@@ -1,7 +1,0 @@
-class SignupsController < ApplicationController
-  def index
-@signup = Signup.new(params[:signup])
-@signup.save if request.post?
-end
-  end
-
