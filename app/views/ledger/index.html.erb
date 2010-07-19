@@ -5,8 +5,13 @@
 <table>
 <h4><u>ADD Amount:</u></h4></br>
   <td><% form_for :group,:url=>{:action => "show_user" } do|f| %></td>
-  <td><%= f.select ("group_id",@groups.map {|u| [u.group_name,u.id]}, :prompt =>"Select Group") %></td>
-  <td><%= f.submit 'show group members' %> </td>
+
+<td>
+ Select Date: <%= calendar_date_select_tag "create_date","", :popup => "force" -%>
+</td>
+<br></br>
+  <td><%= f.select("group_id",@groups.map {|u| [u.group_name,u.id]}, :prompt =>"Select Group") %></td>
+  <td><%= submit_tag 'show group members' %> </td>
 </tr>
 <% end %>
 </table>
@@ -16,7 +21,10 @@
 <table>
 <td><% form_for :group,:url=>{:action => "show_ledger" } do|f| %></td>
 <label ="ledger">Go To Date</label><br/>
-<td><%= f.select ("id",@ledgers.map {|u| [u.date_ledger,u.id]}, :prompt =>"Select date") %></td>
+
+<td>
+  <%= calendar_date_select_tag "date","", :popup => "force" -%>
+</td>
 <td><%= submit_tag "Show Ledger" %><br/></td>
 <% end %>
 </table>
