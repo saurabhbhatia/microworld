@@ -1,5 +1,5 @@
 class LedgerController < ApplicationController
-#before_filter :login_require #, :except => [:index]
+before_filter :login_required #, :except => [:index]
  def index
       @users = User.all
       @ledgers= Ledger.all

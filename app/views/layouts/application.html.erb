@@ -31,13 +31,18 @@ Released   : 20090523
 	<!-- end #header -->
 	<div id="menu">
 		<ul>
+                        <% if session[:user] %> 
 			<li class="current_page_item"><%= link_to 'Home', :controller => "userp", :action => "login" %></li>
 			<li><%= link_to 'Daily Ledger' , :controller=> "ledger", :action=> "index" %> </li>
 			<li><%= link_to 'Manage Individuals', :controller => "users" ,:action => "index"  %></li>
 			<li><%= link_to 'Manage Groups', :controller => "groups", :action => "index" %></li>
 			<li><a href="#">Master Data</a></li>
 			<li><a href="#">Notes</a></li>
-			<li><%= link_to 'Log Out', :controller => "userp", :action => "login" %></li>
+
+  			  <li><%= link_to 'Log Out', :controller => "sessions", :action => "destroy" %></li>
+                        <% else %>
+                         <li><h2>Please login </h2></li>
+                        <% end %>
 		</ul>
 	</div>
 	<!-- end #menu -->
@@ -58,9 +63,11 @@ Released   : 20090523
 		<div id="sidebar">
 			<ul>
 				<li>
-					
+
+				<% if session[:user] %>
 				<li>
-					<h2>Navigation</h2>
+
+                       		   <h2>Navigation</h2>
 					<ul>
 						<li><%= link_to 'Daily Ledger', :controller => "ledger" ,:action => "index" %></li>
                                                 <li><%= link_to 'Manage Individuals', :controller => "users" ,:action => "index" %></li>
@@ -68,6 +75,7 @@ Released   : 20090523
 						<li><%= link_to 'Refund Amount', :controller => "refund" ,:action => "index" %></li>
 					</ul>
 				</li>
+                                <% end %>  
 			</ul>
 		</div>
 		<!-- end #sidebar -->

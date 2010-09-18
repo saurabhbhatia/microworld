@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408112536) do
+ActiveRecord::Schema.define(:version => 20100914075730) do
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
@@ -74,24 +74,17 @@ ActiveRecord::Schema.define(:version => 20100408112536) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "user_name"
-    t.date     "birth_date"
-    t.string   "birth_place"
-    t.integer  "age"
-    t.text     "address"
-    t.string   "status"
-    t.string   "occupation"
-    t.integer  "income"
-    t.integer  "no_of_children"
-    t.integer  "children_school"
-    t.binary   "image",             :limit => 16777215
-    t.integer  "group_id"
-    t.integer  "totalamount",                           :default => 0
-    t.text     "history"
-    t.text     "future_vision"
-    t.text     "reason_for_saving"
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
   end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

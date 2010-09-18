@@ -1,5 +1,7 @@
 class RefundController < ApplicationController
-#before_filter :login_require #, :except => [:index, :login]
+
+before_filter :login_required #, :except => [:index, :login]
+
  def index
       @users = User.all
       @refunds= Refund.all
@@ -9,8 +11,6 @@ class RefundController < ApplicationController
       format.xml  { render :xml => @refund}
 	end# end of loop
      end#end of index
-
-
  
  def show_user
 
@@ -21,7 +21,8 @@ class RefundController < ApplicationController
       format.html
       end
     end
-def new
+
+ def new
       @refund=Refund.new
       @groups=Group.all
       @user=User.all  

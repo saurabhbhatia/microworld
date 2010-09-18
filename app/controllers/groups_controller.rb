@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
 #before_filter :login_require , :except => [:index, :login]
+before_filter :login_required #, :except => [:new,:activate, :forgot, :reset, :get_place_names, :create, :validate_email]
   # GET /groups
   # GET /groups.xml
   def index

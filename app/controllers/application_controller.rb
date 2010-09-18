@@ -4,6 +4,8 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+   
+  include ::AuthenticatedSystem
  
 #before_filter :login_require ,#:except => [:index, :login]
 helper_method :current_user, :logged_in?, :admin?, :can_edit?
@@ -26,7 +28,7 @@ def login_require
     end
 flash[:warning]='Please login to continue'
     session[:return_to]=request.request_uri
-    redirect_to :controller => "userp", :action => "login"
+    redirect_to :controller => "sessions", :action => "new"
     return false 
   end
   # Scrub sensitive parameters from your log
