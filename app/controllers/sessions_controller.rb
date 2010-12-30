@@ -2,7 +2,7 @@
 class SessionsController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-
+ 
   # render new.erb.html
   def new
   end
@@ -17,21 +17,24 @@ class SessionsController < ApplicationController
       # reset_session
       session[:user] = user
       self.current_user = user
-      new_cookie_flag = (params[:remember_me] == "1")
-      handle_remember_cookie! new_cookie_flag
+#      new_cookie_flag = (params[:remember_me] == "1")
+#      handle_remember_cookie! new_cookie_flag
       #redirect_back_or_default('/')
       redirect_to :controller => "home", :action => "index"
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
       @login       = params[:login]
-      @remember_me = params[:remember_me]
+ #     @remember_me = params[:remember_me]
       render :action => 'new'
     end
   end
 
   def destroy
-    logout_killing_session!
+   # logout_killing_session!
+     session[:user] = nil
+     self.current_user = nil
+
     flash[:notice] = "You have been logged out."
     redirect_back_or_default('/')
   end

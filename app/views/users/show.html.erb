@@ -3,21 +3,30 @@
 <td>
 <p>
 <h3><b>Total Amount:</b>
-<u><%=h @user.totalamount%></u>
+<u><%#=h @user.totalamount%></u>
 </p></h3><p>
 
-<% if url_for_file_column('user','image') != nil %>
-   <%= image_tag url_for_file_column('user','image') %></h2>
-<% end %>
+<%# if url_for_file_column('user','image') != nil %>
+   <%#= image_tag url_for_file_column('user','image') %></h2>
+<%# end %>
+
+<%= image_tag @user.photo.url %>
+<%= image_tag @user.photo.url(:thumb) %>
+
 </p></td></tr><tr>
 <td><p>
    <b>Belongs To Group:</b>
-   <u><%=h @user.group.group_name %></u>
+   <u><%#=h @user.group.group_name %></u>
 </p></td></tr><tr>
 
+
+<% if @user %>
+
+
+<% else %>
 <td><p>
   <b>Member name:</b>
-  <%=h @user.user_name %>
+  <%=h @user.email %>
 </p></td></tr><tr>
 <td><p>
     <b>Bitrh Date:</b>
@@ -67,9 +76,8 @@
   <%=h @user.future_vision %>
 </p></td></tr><tr>
 </tr>
+
+<% end %>
 </table>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
-
-

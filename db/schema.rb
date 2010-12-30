@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100914075730) do
+ActiveRecord::Schema.define(:version => 20101229093939) do
+
+  create_table "attachments", :force => true do |t|
+    t.integer  "size"
+    t.integer  "height"
+    t.integer  "width"
+    t.integer  "parent_id"
+    t.integer  "attachable_id"
+    t.integer  "position"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
@@ -40,6 +55,26 @@ ActiveRecord::Schema.define(:version => 20100914075730) do
   create_table "ledgers_users", :force => true do |t|
     t.integer  "user_id"
     t.integer  "ledger_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.date     "birth_date"
+    t.string   "birth_place"
+    t.integer  "age"
+    t.text     "address"
+    t.string   "status"
+    t.string   "occupation"
+    t.integer  "income"
+    t.integer  "no_of_children"
+    t.integer  "children_school"
+    t.binary   "image",             :limit => 16777215
+    t.integer  "group_id"
+    t.integer  "totalamount",                           :default => 0
+    t.text     "history"
+    t.text     "future_vision"
+    t.text     "reason_for_saving"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,6 +118,9 @@ ActiveRecord::Schema.define(:version => 20100914075730) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

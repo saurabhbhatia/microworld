@@ -19,16 +19,25 @@ class User < ActiveRecord::Base
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
   belongs_to :group
   #----------------------------
-  has_attachment    :content_type => :image,
-                    :storage => :file_system,
-                    :size => 1.kilobyte .. 10.megabytes,
-                    :resize_to => '500>',
-                    :thumbnails => { :thumb => '125' }
-  validates_as_attachment
 
+    has_attached_file :photo, :styles => { :small => "150x150>" },
+                  :path => ":rails_root/public/:class/:attachment/:id/:style_:basename.:extension"
 
+  attr_accessible :photo, :photo_file_name, :photo_content_type, :photo_file_size
 
+#  has_attachment    :content_type => :image,
+#                    :storage => :file_system,
+#                    :size => 1.kilobyte .. 10.megabytes,
+#                    :resize_to => '500>',
+#                    :thumbnails => { :thumb => '125' }
+#  validates_as_attachment
+#   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
+#   has_attached_file :photo,
+#      :styles => {
+#        :thumb=> "100x100#",
+#        :small  => "150x150>" }
+ 
   #----------------------------
 
   # HACK HACK HACK -- how to do attr_accessible from here?
